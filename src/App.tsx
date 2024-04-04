@@ -18,6 +18,7 @@ function App() {
   const [imageUrl, setImageUrl] = useState('');
   const [selectedDate, setSelectedDate] = useState('');
 
+  // 日期选中监听
   const onSelected = (e: any) => {
     const curtName = dayjs(e.detail.selected).format('YYYY-MM-DD');
 
@@ -52,6 +53,7 @@ function App() {
       .then(function (dataUrl: string) {
         setImageUrl(dataUrl);
 
+        // 因为要等 image 渲染出来，所以需要加一个 setTimeout 操作
         setTimeout(() => {
           const image = document.getElementById('result');
 
@@ -62,10 +64,11 @@ function App() {
         }, 300);
       })
       .catch(function (error: Error) {
-        console.error('oops, something went wrong!', error);
+        console.error('转换出错：', error);
       });
   };
 
+  // 下载生成结果
   const onDownload = () => {
     download(imageUrl, selectedDate);
   }
