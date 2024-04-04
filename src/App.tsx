@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   const onConvert = () => {
-    const node = document.getElementById('calendar');
+    const node = document.getElementById('wired-calendar');
 
     if (!node) {
       return alert("找不到节点")
@@ -76,7 +76,7 @@ function App() {
   return (
     <div className="root">
       {/*容器*/}
-      <div id="calendar">
+      <div>
         <wired-calendar id="wired-calendar" onSelected={onSelected}/>
       </div>
 

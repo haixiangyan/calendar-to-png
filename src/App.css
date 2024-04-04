@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.root {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #calendar {
   display: inline-block;
 }
